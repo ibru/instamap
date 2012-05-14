@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36015FFE156145B500FE589D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36015FFD156145B500FE589D /* UIKit.framework */; };
+		36016000156145B500FE589D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36015FFF156145B500FE589D /* Foundation.framework */; };
+		36016002156145B500FE589D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36016001156145B500FE589D /* CoreGraphics.framework */; };
+		36016008156145B500FE589D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36016006156145B500FE589D /* InfoPlist.strings */; };
+		3601600A156145B500FE589D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36016009156145B500FE589D /* main.m */; };
+		3601600E156145B500FE589D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3601600D156145B500FE589D /* AppDelegate.m */; };
+		36016011156145B500FE589D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3601600F156145B500FE589D /* MainStoryboard.storyboard */; };
+		36016014156145B500FE589D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36016013156145B500FE589D /* ViewController.m */; };
+		3601601C156145B500FE589D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601601B156145B500FE589D /* SenTestingKit.framework */; };
+		3601601D156145B500FE589D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36015FFD156145B500FE589D /* UIKit.framework */; };
+		3601601E156145B500FE589D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36015FFF156145B500FE589D /* Foundation.framework */; };
+		36016026156145B500FE589D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36016024156145B500FE589D /* InfoPlist.strings */; };
+		36016029156145B500FE589D /* InstamapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36016028156145B500FE589D /* InstamapTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3601601F156145B500FE589D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36015FF0156145B500FE589D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36015FF8156145B500FE589D;
+			remoteInfo = Instamap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36015FF9156145B500FE589D /* Instamap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instamap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36015FFD156145B500FE589D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36015FFF156145B500FE589D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36016001156145B500FE589D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		36016005156145B500FE589D /* Instamap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Instamap-Info.plist"; sourceTree = "<group>"; };
+		36016007156145B500FE589D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36016009156145B500FE589D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3601600B156145B500FE589D /* Instamap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instamap-Prefix.pch"; sourceTree = "<group>"; };
+		3601600C156145B500FE589D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3601600D156145B500FE589D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		36016010156145B500FE589D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		36016012156145B500FE589D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		36016013156145B500FE589D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3601601A156145B500FE589D /* InstamapTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstamapTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3601601B156145B500FE589D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		36016023156145B500FE589D /* InstamapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstamapTests-Info.plist"; sourceTree = "<group>"; };
+		36016025156145B500FE589D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36016027156145B500FE589D /* InstamapTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstamapTests.h; sourceTree = "<group>"; };
+		36016028156145B500FE589D /* InstamapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstamapTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36015FF6156145B500FE589D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36015FFE156145B500FE589D /* UIKit.framework in Frameworks */,
+				36016000156145B500FE589D /* Foundation.framework in Frameworks */,
+				36016002156145B500FE589D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36016016156145B500FE589D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3601601C156145B500FE589D /* SenTestingKit.framework in Frameworks */,
+				3601601D156145B500FE589D /* UIKit.framework in Frameworks */,
+				3601601E156145B500FE589D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36015FEE156145B500FE589D = {
+			isa = PBXGroup;
+			children = (
+				36016003156145B500FE589D /* Instamap */,
+				36016021156145B500FE589D /* InstamapTests */,
+				36015FFC156145B500FE589D /* Frameworks */,
+				36015FFA156145B500FE589D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36015FFA156145B500FE589D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36015FF9156145B500FE589D /* Instamap.app */,
+				3601601A156145B500FE589D /* InstamapTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36015FFC156145B500FE589D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36015FFD156145B500FE589D /* UIKit.framework */,
+				36015FFF156145B500FE589D /* Foundation.framework */,
+				36016001156145B500FE589D /* CoreGraphics.framework */,
+				3601601B156145B500FE589D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36016003156145B500FE589D /* Instamap */ = {
+			isa = PBXGroup;
+			children = (
+				3601600C156145B500FE589D /* AppDelegate.h */,
+				3601600D156145B500FE589D /* AppDelegate.m */,
+				3601600F156145B500FE589D /* MainStoryboard.storyboard */,
+				36016012156145B500FE589D /* ViewController.h */,
+				36016013156145B500FE589D /* ViewController.m */,
+				36016004156145B500FE589D /* Supporting Files */,
+			);
+			path = Instamap;
+			sourceTree = "<group>";
+		};
+		36016004156145B500FE589D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36016005156145B500FE589D /* Instamap-Info.plist */,
+				36016006156145B500FE589D /* InfoPlist.strings */,
+				36016009156145B500FE589D /* main.m */,
+				3601600B156145B500FE589D /* Instamap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36016021156145B500FE589D /* InstamapTests */ = {
+			isa = PBXGroup;
+			children = (
+				36016027156145B500FE589D /* InstamapTests.h */,
+				36016028156145B500FE589D /* InstamapTests.m */,
+				36016022156145B500FE589D /* Supporting Files */,
+			);
+			path = InstamapTests;
+			sourceTree = "<group>";
+		};
+		36016022156145B500FE589D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36016023156145B500FE589D /* InstamapTests-Info.plist */,
+				36016024156145B500FE589D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36015FF8156145B500FE589D /* Instamap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3601602C156145B500FE589D /* Build configuration list for PBXNativeTarget "Instamap" */;
+			buildPhases = (
+				36015FF5156145B500FE589D /* Sources */,
+				36015FF6156145B500FE589D /* Frameworks */,
+				36015FF7156145B500FE589D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Instamap;
+			productName = Instamap;
+			productReference = 36015FF9156145B500FE589D /* Instamap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36016019156145B500FE589D /* InstamapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3601602F156145B500FE589D /* Build configuration list for PBXNativeTarget "InstamapTests" */;
+			buildPhases = (
+				36016015156145B500FE589D /* Sources */,
+				36016016156145B500FE589D /* Frameworks */,
+				36016017156145B500FE589D /* Resources */,
+				36016018156145B500FE589D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36016020156145B500FE589D /* PBXTargetDependency */,
+			);
+			name = InstamapTests;
+			productName = InstamapTests;
+			productReference = 3601601A156145B500FE589D /* InstamapTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36015FF0156145B500FE589D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 36015FF3156145B500FE589D /* Build configuration list for PBXProject "Instamap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 36015FEE156145B500FE589D;
+			productRefGroup = 36015FFA156145B500FE589D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36015FF8156145B500FE589D /* Instamap */,
+				36016019156145B500FE589D /* InstamapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36015FF7156145B500FE589D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36016008156145B500FE589D /* InfoPlist.strings in Resources */,
+				36016011156145B500FE589D /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36016017156145B500FE589D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36016026156145B500FE589D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36016018156145B500FE589D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36015FF5156145B500FE589D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3601600A156145B500FE589D /* main.m in Sources */,
+				3601600E156145B500FE589D /* AppDelegate.m in Sources */,
+				36016014156145B500FE589D /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36016015156145B500FE589D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36016029156145B500FE589D /* InstamapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36016020156145B500FE589D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36015FF8156145B500FE589D /* Instamap */;
+			targetProxy = 3601601F156145B500FE589D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36016006156145B500FE589D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36016007156145B500FE589D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3601600F156145B500FE589D /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36016010156145B500FE589D /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		36016024156145B500FE589D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36016025156145B500FE589D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3601602A156145B500FE589D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3601602B156145B500FE589D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3601602D156145B500FE589D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Instamap/Instamap-Prefix.pch";
+				INFOPLIST_FILE = "Instamap/Instamap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3601602E156145B500FE589D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Instamap/Instamap-Prefix.pch";
+				INFOPLIST_FILE = "Instamap/Instamap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		36016030156145B500FE589D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Instamap.app/Instamap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Instamap/Instamap-Prefix.pch";
+				INFOPLIST_FILE = "InstamapTests/InstamapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		36016031156145B500FE589D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Instamap.app/Instamap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Instamap/Instamap-Prefix.pch";
+				INFOPLIST_FILE = "InstamapTests/InstamapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36015FF3156145B500FE589D /* Build configuration list for PBXProject "Instamap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3601602A156145B500FE589D /* Debug */,
+				3601602B156145B500FE589D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3601602C156145B500FE589D /* Build configuration list for PBXNativeTarget "Instamap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3601602D156145B500FE589D /* Debug */,
+				3601602E156145B500FE589D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3601602F156145B500FE589D /* Build configuration list for PBXNativeTarget "InstamapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36016030156145B500FE589D /* Debug */,
+				36016031156145B500FE589D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36015FF0156145B500FE589D /* Project object */;
+}
