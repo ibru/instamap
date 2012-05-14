@@ -20,6 +20,7 @@
 		3601601E156145B500FE589D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36015FFF156145B500FE589D /* Foundation.framework */; };
 		36016026156145B500FE589D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36016024156145B500FE589D /* InfoPlist.strings */; };
 		36016029156145B500FE589D /* InstamapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36016028156145B500FE589D /* InstamapTests.m */; };
+		360160361561472D00FE589D /* JUInstagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 360160351561472D00FE589D /* JUInstagramAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		36016025156145B500FE589D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36016027156145B500FE589D /* InstamapTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstamapTests.h; sourceTree = "<group>"; };
 		36016028156145B500FE589D /* InstamapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstamapTests.m; sourceTree = "<group>"; };
+		360160341561472D00FE589D /* JUInstagramAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUInstagramAPI.h; sourceTree = "<group>"; };
+		360160351561472D00FE589D /* JUInstagramAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUInstagramAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +117,8 @@
 				3601600C156145B500FE589D /* AppDelegate.h */,
 				3601600D156145B500FE589D /* AppDelegate.m */,
 				3601600F156145B500FE589D /* MainStoryboard.storyboard */,
-				36016012156145B500FE589D /* ViewController.h */,
-				36016013156145B500FE589D /* ViewController.m */,
+				36016033156146DD00FE589D /* Screens */,
+				36016032156146C400FE589D /* Instagram API */,
 				36016004156145B500FE589D /* Supporting Files */,
 			);
 			path = Instamap;
@@ -149,6 +152,24 @@
 				36016024156145B500FE589D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36016032156146C400FE589D /* Instagram API */ = {
+			isa = PBXGroup;
+			children = (
+				360160341561472D00FE589D /* JUInstagramAPI.h */,
+				360160351561472D00FE589D /* JUInstagramAPI.m */,
+			);
+			name = "Instagram API";
+			sourceTree = "<group>";
+		};
+		36016033156146DD00FE589D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				36016012156145B500FE589D /* ViewController.h */,
+				36016013156145B500FE589D /* ViewController.m */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +218,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Jiří Urbášek";
 			};
 			buildConfigurationList = 36015FF3156145B500FE589D /* Build configuration list for PBXProject "Instamap" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -260,6 +282,7 @@
 				3601600A156145B500FE589D /* main.m in Sources */,
 				3601600E156145B500FE589D /* AppDelegate.m in Sources */,
 				36016014156145B500FE589D /* ViewController.m in Sources */,
+				360160361561472D00FE589D /* JUInstagramAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
