@@ -12,23 +12,45 @@
 
 @end
 
+#pragma mark -
+
 @implementation ViewController
+
+@synthesize
+mapView = _mapView;
+
+#pragma mark UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    self.mapView.userTrackingMode = MKUserTrackingModeFollow;
+    
+    NSLog(@"coordinate: lat: %f, lon: %f", self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude);
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+#pragma mark MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    
+    [mapView setCenterCoordinate:mapView.region.center animated:NO];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+
+    NSLog(@"coordinate: lat: %f, lon: %f", self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude);
 }
+
+#pragma mark ViewController
+
+#pragma mark -- actions
+
+- (IBAction)locationRefreshTouched:(id)sender {
+    
+}
+
 
 @end

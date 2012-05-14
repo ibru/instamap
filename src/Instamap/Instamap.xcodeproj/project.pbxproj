@@ -21,6 +21,7 @@
 		36016026156145B500FE589D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36016024156145B500FE589D /* InfoPlist.strings */; };
 		36016029156145B500FE589D /* InstamapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36016028156145B500FE589D /* InstamapTests.m */; };
 		360160361561472D00FE589D /* JUInstagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 360160351561472D00FE589D /* JUInstagramAPI.m */; };
+		36016038156148A700FE589D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36016037156148A700FE589D /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		36016028156145B500FE589D /* InstamapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstamapTests.m; sourceTree = "<group>"; };
 		360160341561472D00FE589D /* JUInstagramAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUInstagramAPI.h; sourceTree = "<group>"; };
 		360160351561472D00FE589D /* JUInstagramAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUInstagramAPI.m; sourceTree = "<group>"; };
+		36016037156148A700FE589D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36016038156148A700FE589D /* MapKit.framework in Frameworks */,
 				36015FFE156145B500FE589D /* UIKit.framework in Frameworks */,
 				36016000156145B500FE589D /* Foundation.framework in Frameworks */,
 				36016002156145B500FE589D /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		36015FFC156145B500FE589D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36016037156148A700FE589D /* MapKit.framework */,
 				36015FFD156145B500FE589D /* UIKit.framework */,
 				36015FFF156145B500FE589D /* Foundation.framework */,
 				36016001156145B500FE589D /* CoreGraphics.framework */,
