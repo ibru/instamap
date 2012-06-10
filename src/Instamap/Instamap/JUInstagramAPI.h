@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <RestKit/RestKit.h>
 
 
 @class JUInstagramAPI;
@@ -19,7 +20,7 @@
 
 #pragma mark -
                                                                                                      
-@interface JUInstagramAPI : NSObject
+@interface JUInstagramAPI : NSObject <RKObjectLoaderDelegate>
 
 @property (nonatomic, strong) id<JUInstagramAPIDelegate> apiDelegate;
 

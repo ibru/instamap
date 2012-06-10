@@ -16,7 +16,9 @@ coordinate = _coordinate,
 caption = _caption,
 user = _user,
 filter = _filter,
-tags = _tags;
+tags = _tags,
+latitude = _latitude,
+longitude = _longitude;
 
 
 @end

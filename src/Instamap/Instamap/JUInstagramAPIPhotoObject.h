@@ -17,5 +17,7 @@
 @property (nonatomic, retain) NSString *user;
 @property (nonatomic, retain) NSString *filter;
 @property (nonatomic, retain) NSArray *tags;
+@property (nonatomic, retain) NSNumber *latitude;
+@property (nonatomic, retain) NSNumber *longitude;
 
 @end

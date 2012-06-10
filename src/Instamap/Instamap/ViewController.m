@@ -13,6 +13,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, retain) JUInstagramAPI *instaAPI;
+
 @end
 
 #pragma mark -
@@ -21,6 +23,9 @@
 
 @synthesize
 mapView = _mapView;
+
+@synthesize
+instaAPI = _instaAPI;
 
 #pragma mark UIViewController
 
@@ -31,6 +36,10 @@ mapView = _mapView;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
+    
+    self.instaAPI = [[JUInstagramAPI alloc] init];
+    self.instaAPI.apiDelegate = self;
+    [self.instaAPI login];
 }
 
 #pragma mark MKMapViewDelegate
@@ -38,11 +47,15 @@ mapView = _mapView;
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     
     [mapView setCenterCoordinate:mapView.region.center animated:NO];
+    
+    [self.instaAPI searchPhotosNearLocation:userLocation.coordinate inRange:5000];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
 
     NSLog(@"coordinate: lat: %f, lon: %f", self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude);
+    
+    [self.instaAPI searchPhotosNearLocation:mapView.centerCoordinate inRange:5000];
 }
 
 #pragma mark ViewController
@@ -62,7 +75,7 @@ mapView = _mapView;
         
     for (JUInstagramAPIPhotoObject *photo in photos) {
         
-        id<MKAnnotation> pin = [PhotoPinView photoViewWithCoordinate:photo.coordinate
+        id<MKAnnotation> pin = [PhotoPinView photoViewWithCoordinate:CLLocationCoordinate2DMake([photo.latitude floatValue], [photo.longitude floatValue])
                                                                title:photo.caption
                                                             subtitle:nil];
         [pins addObject:pin];
