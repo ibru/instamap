@@ -8,6 +8,39 @@
 
 #import "JUInstagramAPI.h"
 
+
+@interface JUInstagramAPI() {
+
+}
+
+@property (nonatomic, retain) NSString *authToken;
+
+@end
+
+#pragma mark -
+
 @implementation JUInstagramAPI
+
+#pragma mark Private
+
+@synthesize authToken = _authToken;
+
+
+#pragma mark Public
+
+@synthesize apiDelegate;
+
+- (BOOL)isSessionValid {
+    return self.authToken != nil;
+}
+
+- (void)login {
+
+}
+
+- (void)logout {
+
+}
+
 
 @end

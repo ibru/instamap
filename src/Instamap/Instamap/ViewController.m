@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "PhotoPinView.h"
+#import "JUInstagramAPIPhotoObject.h"
+
 
 @interface ViewController ()
 
@@ -28,8 +31,6 @@ mapView = _mapView;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = MKUserTrackingModeFollow;
-    
-    NSLog(@"coordinate: lat: %f, lon: %f", self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude);
 }
 
 #pragma mark MKMapViewDelegate
@@ -52,5 +53,24 @@ mapView = _mapView;
     
 }
 
+#pragma mark JUInstagramAPIDelegate
+
+
+- (void)instaAPI:(JUInstagramAPI *)api didReceivedPhotos:(NSArray *)photos nearLocation:(CLLocationCoordinate2D)location inRange:(CGFloat)range {
+
+    NSMutableArray *pins = [NSMutableArray arrayWithCapacity:[photos count]];
+        
+    for (JUInstagramAPIPhotoObject *photo in photos) {
+        
+        id<MKAnnotation> pin = [PhotoPinView photoViewWithCoordinate:photo.coordinate
+                                                               title:photo.caption
+                                                            subtitle:nil];
+        [pins addObject:pin];
+    }
+    
+    // TODO: reload only updated annotations
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:pins];
+}
 
 @end

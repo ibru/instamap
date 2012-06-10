@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "JUInstagramAPI.h"
 
-@interface ViewController : UIViewController <MKMapViewDelegate>
+
+@interface ViewController : UIViewController <MKMapViewDelegate, JUInstagramAPIDelegate>
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 

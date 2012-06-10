@@ -22,6 +22,9 @@
 		36016029156145B500FE589D /* InstamapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36016028156145B500FE589D /* InstamapTests.m */; };
 		360160361561472D00FE589D /* JUInstagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 360160351561472D00FE589D /* JUInstagramAPI.m */; };
 		36016038156148A700FE589D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36016037156148A700FE589D /* MapKit.framework */; };
+		3660B79415848BEF007DA074 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3660B79315848BEF007DA074 /* CoreLocation.framework */; };
+		3660B79C15849021007DA074 /* PhotoPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3660B79B15849021007DA074 /* PhotoPinView.m */; };
+		3660B79F15849394007DA074 /* JUInstagramAPIPhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3660B79E15849394007DA074 /* JUInstagramAPIPhotoObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,11 @@
 		360160341561472D00FE589D /* JUInstagramAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUInstagramAPI.h; sourceTree = "<group>"; };
 		360160351561472D00FE589D /* JUInstagramAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUInstagramAPI.m; sourceTree = "<group>"; };
 		36016037156148A700FE589D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3660B79315848BEF007DA074 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3660B79A15849021007DA074 /* PhotoPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPinView.h; sourceTree = "<group>"; };
+		3660B79B15849021007DA074 /* PhotoPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPinView.m; sourceTree = "<group>"; };
+		3660B79D15849394007DA074 /* JUInstagramAPIPhotoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUInstagramAPIPhotoObject.h; sourceTree = "<group>"; };
+		3660B79E15849394007DA074 /* JUInstagramAPIPhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUInstagramAPIPhotoObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3660B79415848BEF007DA074 /* CoreLocation.framework in Frameworks */,
 				36016038156148A700FE589D /* MapKit.framework in Frameworks */,
 				36015FFE156145B500FE589D /* UIKit.framework in Frameworks */,
 				36016000156145B500FE589D /* Foundation.framework in Frameworks */,
@@ -106,6 +115,7 @@
 		36015FFC156145B500FE589D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3660B79315848BEF007DA074 /* CoreLocation.framework */,
 				36016037156148A700FE589D /* MapKit.framework */,
 				36015FFD156145B500FE589D /* UIKit.framework */,
 				36015FFF156145B500FE589D /* Foundation.framework */,
@@ -163,6 +173,8 @@
 			children = (
 				360160341561472D00FE589D /* JUInstagramAPI.h */,
 				360160351561472D00FE589D /* JUInstagramAPI.m */,
+				3660B79D15849394007DA074 /* JUInstagramAPIPhotoObject.h */,
+				3660B79E15849394007DA074 /* JUInstagramAPIPhotoObject.m */,
 			);
 			name = "Instagram API";
 			sourceTree = "<group>";
@@ -172,6 +184,8 @@
 			children = (
 				36016012156145B500FE589D /* ViewController.h */,
 				36016013156145B500FE589D /* ViewController.m */,
+				3660B79A15849021007DA074 /* PhotoPinView.h */,
+				3660B79B15849021007DA074 /* PhotoPinView.m */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -287,6 +301,8 @@
 				3601600E156145B500FE589D /* AppDelegate.m in Sources */,
 				36016014156145B500FE589D /* ViewController.m in Sources */,
 				360160361561472D00FE589D /* JUInstagramAPI.m in Sources */,
+				3660B79C15849021007DA074 /* PhotoPinView.m in Sources */,
+				3660B79F15849394007DA074 /* JUInstagramAPIPhotoObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +472,7 @@
 				3601602E156145B500FE589D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3601602F156145B500FE589D /* Build configuration list for PBXNativeTarget "InstamapTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +481,7 @@
 				36016031156145B500FE589D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
+
+@class JUInstagramAPI;
+@protocol JUInstagramAPIDelegate <NSObject>
+
+- (void)instaAPI:(JUInstagramAPI *)api didReceivedPhotos:(NSArray *)photos nearLocation:(CLLocationCoordinate2D)location inRange:(CGFloat)range;
+
+@end
+
+#pragma mark -
+                                                                                                     
 @interface JUInstagramAPI : NSObject
+
+@property (nonatomic, strong) id<JUInstagramAPIDelegate> apiDelegate;
+
+- (BOOL)isSessionValid;
+
+- (void)login;
+- (void)logout;
+
+- (void)searchPhotosNearLocation:(CLLocationCoordinate2D)locatoion inRange:(CGFloat)range;
 
 @end
