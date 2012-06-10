@@ -7,6 +7,7 @@
 //
 
 #import "JUInstagramAPI.h"
+#import <RestKit/RestKit.h>
 
 
 @interface JUInstagramAPI() {
