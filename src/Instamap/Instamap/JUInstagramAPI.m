@@ -10,6 +10,8 @@
 #import "JUInstagramAPIPhotoObject.h"
 #import "NSString+RKAdditions.h"
 
+#define kGeoDegreeInMetres      110574.61
+
 
 @interface JUInstagramAPI() {
 
@@ -17,8 +19,7 @@
 
 @property (nonatomic, retain) NSString *authToken;
 
-@property (nonatomic) CLLocationCoordinate2D searchLocation;
-@property (nonatomic) CGFloat searchRange;
+@property (nonatomic) MKCoordinateRegion searchRegion;
 
 @end
 
@@ -30,8 +31,7 @@
 
 @synthesize
 authToken = _authToken,
-searchLocation = _searchLocation,
-searchRange = _searchRange;
+searchRegion = _searchRegion;
 
 
 #pragma mark Public
@@ -53,10 +53,9 @@ searchRange = _searchRange;
 
 }
 
-- (void)searchPhotosNearLocation:(CLLocationCoordinate2D)locatoion inRange:(CGFloat)range {
+- (void)searchPhotosInRegion:(MKCoordinateRegion)region {
     
-    self.searchLocation = locatoion;
-    self.searchRange = range;
+    self.searchRegion = region;
     
     RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURLString:@"https://api.instagram.com/v1/"];
     
@@ -70,7 +69,7 @@ searchRange = _searchRange;
     [manager.mappingProvider setMapping:articleMapping forKeyPath:@"data"];
     
     NSString *resourcePath = [@"/media/search" stringByAppendingFormat:@"?lat=%f&lng=%f&access_token=%@&distance=%d",
-                             locatoion.latitude, locatoion.longitude, self.authToken, (int)range];
+                             self.searchRegion.center.latitude, self.searchRegion.center.longitude, self.authToken, (int)(MAX(self.searchRegion.span.latitudeDelta,self.searchRegion.span.longitudeDelta) * kGeoDegreeInMetres)];
     
     [manager loadObjectsAtResourcePath:resourcePath delegate:self];
 }
@@ -79,12 +78,8 @@ searchRange = _searchRange;
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
     
-    if (self.apiDelegate != nil && [self.apiDelegate respondsToSelector:@selector(instaAPI:didReceivedPhotos:nearLocation:inRange:)]) {
-        [self.apiDelegate instaAPI:self didReceivedPhotos:objects nearLocation:self.searchLocation inRange:self.searchRange];
-    }
-    
-    for (JUInstagramAPIPhotoObject *photoObject in objects) {
-        NSLog(@"%@, %@, %@", photoObject.user, photoObject.tags, photoObject.caption);
+    if (self.apiDelegate != nil && [self.apiDelegate respondsToSelector:@selector(instaAPI:didReceivedPhotos:inRegion:)]) {
+        [self.apiDelegate instaAPI:self didReceivedPhotos:objects inRegion:self.searchRegion];
     }
 }
 

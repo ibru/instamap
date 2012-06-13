@@ -48,7 +48,7 @@ instaAPI = _instaAPI;
 
     NSLog(@"coordinate: lat: %f, lon: %f", self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude);
     
-    [self.instaAPI searchPhotosNearLocation:mapView.centerCoordinate inRange:5000];
+    [self.instaAPI searchPhotosInRegion:mapView.region];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)aMapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -80,7 +80,7 @@ instaAPI = _instaAPI;
 #pragma mark JUInstagramAPIDelegate
 
 
-- (void)instaAPI:(JUInstagramAPI *)api didReceivedPhotos:(NSArray *)photos nearLocation:(CLLocationCoordinate2D)location inRange:(CGFloat)range {
+- (void)instaAPI:(JUInstagramAPI *)api didReceivedPhotos:(NSArray *)photos inRegion:(MKCoordinateRegion)region {
 
     NSMutableArray *pins = [NSMutableArray arrayWithCapacity:[photos count]];
         

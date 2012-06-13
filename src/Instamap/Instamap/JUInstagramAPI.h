@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <RestKit/RestKit.h>
+#import <MapKit/MapKit.h>
 
 
 @class JUInstagramAPI;
 @protocol JUInstagramAPIDelegate <NSObject>
 
-- (void)instaAPI:(JUInstagramAPI *)api didReceivedPhotos:(NSArray *)photos nearLocation:(CLLocationCoordinate2D)location inRange:(CGFloat)range;
+- (void)instaAPI:(JUInstagramAPI *)api didReceivedPhotos:(NSArray *)photos inRegion:(MKCoordinateRegion)region;
 
 @end
 
@@ -29,6 +30,6 @@
 - (void)login;
 - (void)logout;
 
-- (void)searchPhotosNearLocation:(CLLocationCoordinate2D)locatoion inRange:(CGFloat)range;
+- (void)searchPhotosInRegion:(MKCoordinateRegion)region;
 
 @end
