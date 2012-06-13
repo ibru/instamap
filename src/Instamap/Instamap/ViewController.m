@@ -44,13 +44,6 @@ instaAPI = _instaAPI;
 
 #pragma mark MKMapViewDelegate
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    
-    [mapView setCenterCoordinate:mapView.region.center animated:NO];
-    
-    [self.instaAPI searchPhotosNearLocation:userLocation.coordinate inRange:5000];
-}
-
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
 
     NSLog(@"coordinate: lat: %f, lon: %f", self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude);

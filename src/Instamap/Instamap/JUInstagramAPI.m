@@ -58,18 +58,20 @@ searchRange = _searchRange;
     self.searchLocation = locatoion;
     self.searchRange = range;
     
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURLString:@"https://api.instagram.com/v1/"];
+    
     RKObjectMapping* articleMapping = [RKObjectMapping mappingForClass:[JUInstagramAPIPhotoObject class]];
     [articleMapping mapKeyPath:@"user.username" toAttribute:@"user"];
     [articleMapping mapKeyPath:@"location.latitude" toAttribute:@"latitude"];
     [articleMapping mapKeyPath:@"location.longitude" toAttribute:@"longitude"];
-    [articleMapping mapAttributes:@"caption", @"filter", nil];
+    [articleMapping mapKeyPath:@"caption.text" toAttribute:@"caption"];
+    [articleMapping mapAttributes:@"filter", nil];
     
-    [[RKObjectManager sharedManager].mappingProvider setMapping:articleMapping forKeyPath:@"data"];
+    [manager.mappingProvider setMapping:articleMapping forKeyPath:@"data"];
     
     NSString *resourcePath = [@"/media/search" stringByAppendingFormat:@"?lat=%f&lng=%f&access_token=%@&distance=%d",
                              locatoion.latitude, locatoion.longitude, self.authToken, (int)range];
     
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURLString:@"https://api.instagram.com/v1/"];
     [manager loadObjectsAtResourcePath:resourcePath delegate:self];
 }
 
