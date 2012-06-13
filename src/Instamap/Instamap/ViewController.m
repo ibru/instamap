@@ -51,6 +51,24 @@ instaAPI = _instaAPI;
     [self.instaAPI searchPhotosNearLocation:mapView.centerCoordinate inRange:5000];
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)aMapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    if (annotation == aMapView.userLocation) {
+		// show default view
+		return nil; 
+	}
+    static NSString *reuseId = @"mapPinView";
+    
+    MKPinAnnotationView *pinView = (MKPinAnnotationView*)[aMapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
+    if (pinView == nil) {
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
+        pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        pinView.canShowCallout = YES;	
+    }
+    
+    return pinView;
+}
+
 #pragma mark ViewController
 
 #pragma mark -- actions
