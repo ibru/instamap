@@ -18,8 +18,9 @@
 }
 
 @property (nonatomic, retain) NSString *authToken;
-
 @property (nonatomic) MKCoordinateRegion searchRegion;
+
+- (void)setupJSONMappings;
 
 @end
 
@@ -33,6 +34,32 @@
 authToken = _authToken,
 searchRegion = _searchRegion;
 
+- (void)setupJSONMappings {
+    
+    RKLogConfigureByName("RestKit/Network", RKLogLevelInfo);
+    
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURLString:@"https://api.instagram.com/v1/"];
+    
+    RKObjectMapping *articleMapping = [RKObjectMapping mappingForClass:[JUInstagramAPIPhotoObject class]];
+    [articleMapping mapKeyPath:@"user.username" toAttribute:@"user"];
+    [articleMapping mapKeyPath:@"location.latitude" toAttribute:@"latitude"];
+    [articleMapping mapKeyPath:@"location.longitude" toAttribute:@"longitude"];
+    [articleMapping mapKeyPath:@"caption.text" toAttribute:@"caption"];
+    [articleMapping mapAttributes:@"filter", nil];
+    
+    [manager.mappingProvider addObjectMapping:articleMapping];
+}
+
+#pragma mark Init
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self setupJSONMappings];
+    }
+    return self;
+}
 
 #pragma mark Public
 
@@ -57,15 +84,10 @@ searchRegion = _searchRegion;
     
     self.searchRegion = region;
     
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURLString:@"https://api.instagram.com/v1/"];
     
-    RKObjectMapping* articleMapping = [RKObjectMapping mappingForClass:[JUInstagramAPIPhotoObject class]];
-    [articleMapping mapKeyPath:@"user.username" toAttribute:@"user"];
-    [articleMapping mapKeyPath:@"location.latitude" toAttribute:@"latitude"];
-    [articleMapping mapKeyPath:@"location.longitude" toAttribute:@"longitude"];
-    [articleMapping mapKeyPath:@"caption.text" toAttribute:@"caption"];
-    [articleMapping mapAttributes:@"filter", nil];
-    
+    RKObjectManager* manager = [RKObjectManager sharedManager];
+
+    RKObjectMapping *articleMapping = [manager.mappingProvider objectMappingForClass:[JUInstagramAPIPhotoObject class]];
     [manager.mappingProvider setMapping:articleMapping forKeyPath:@"data"];
     
     NSString *resourcePath = [@"/media/search" stringByAppendingFormat:@"?lat=%f&lng=%f&access_token=%@&distance=%d",
