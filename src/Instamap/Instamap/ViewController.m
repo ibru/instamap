@@ -93,7 +93,13 @@ instaAPI = _instaAPI;
     }
     
     // TODO: reload only updated annotations
-    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    NSMutableArray *oldAnnotations = [NSMutableArray arrayWithCapacity:10];
+    for (id annotation in self.mapView.annotations)
+        if (annotation != self.mapView.userLocation)
+            [oldAnnotations addObject:annotation];
+    
+    [self.mapView removeAnnotations:oldAnnotations];
     [self.mapView addAnnotations:pins];
 }
 
