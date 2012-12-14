@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic) MKCoordinateRegion searchRegion;
 
+@property (nonatomic, strong) RKObjectRequestOperation *fetchOperation;
+
 - (void)setupJSONMappings;
 
 @end
@@ -37,17 +39,8 @@ searchRegion = _searchRegion;
 - (void)setupJSONMappings {
     
     RKLogConfigureByName("RestKit/Network", RKLogLevelInfo);
+        
     
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURLString:@"https://api.instagram.com/v1/"];
-    
-    RKObjectMapping *articleMapping = [RKObjectMapping mappingForClass:[JUInstagramAPIPhotoObject class]];
-    [articleMapping mapKeyPath:@"user.username" toAttribute:@"user"];
-    [articleMapping mapKeyPath:@"location.latitude" toAttribute:@"latitude"];
-    [articleMapping mapKeyPath:@"location.longitude" toAttribute:@"longitude"];
-    [articleMapping mapKeyPath:@"caption.text" toAttribute:@"caption"];
-    [articleMapping mapAttributes:@"filter", nil];
-    
-    [manager.mappingProvider addObjectMapping:articleMapping];
 }
 
 #pragma mark Init
@@ -84,31 +77,35 @@ searchRegion = _searchRegion;
     
     self.searchRegion = region;
     
-    
-    RKObjectManager* manager = [RKObjectManager sharedManager];
-
-    RKObjectMapping *articleMapping = [manager.mappingProvider objectMappingForClass:[JUInstagramAPIPhotoObject class]];
-    [manager.mappingProvider setMapping:articleMapping forKeyPath:@"data"];
+    RKObjectMapping *articleMapping = [RKObjectMapping mappingForClass:[JUInstagramAPIPhotoObject class]];
+    [articleMapping addAttributeMappingsFromDictionary:@{
+     @"user.username": @"user",
+     @"location.latitude": @"latitude",
+     @"location.longitude": @"longitude",
+     @"caption.text" : @"caption"
+     }];
+        
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:articleMapping pathPattern:nil keyPath:@"data" statusCodes:nil];
     
     NSString *resourcePath = [@"/media/search" stringByAppendingFormat:@"?lat=%f&lng=%f&access_token=%@&distance=%d",
-                             self.searchRegion.center.latitude, self.searchRegion.center.longitude, self.authToken, (int)(MAX(self.searchRegion.span.latitudeDelta,self.searchRegion.span.longitudeDelta) * kGeoDegreeInMetres)];
+                              self.searchRegion.center.latitude, self.searchRegion.center.longitude, self.authToken, (int)(MAX(self.searchRegion.span.latitudeDelta,self.searchRegion.span.longitudeDelta) * kGeoDegreeInMetres)];
+    NSURL *url = [NSURL URLWithString:[@"https://api.instagram.com/v1/" stringByAppendingString:resourcePath]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    [manager loadObjectsAtResourcePath:resourcePath delegate:self];
-}
-
-#pragma mark RKObjectLoaderDelegate
-
-- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+    self.fetchOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
     
-    if (self.apiDelegate != nil && [self.apiDelegate respondsToSelector:@selector(instaAPI:didReceivedPhotos:inRegion:)]) {
-        [self.apiDelegate instaAPI:self didReceivedPhotos:objects inRegion:self.searchRegion];
-    }
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+    __block JUInstagramAPI *api = self;
     
-    NSLog(@"Error: %@", error);
-}
+    [self.fetchOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
+        if (self.apiDelegate != nil && [self.apiDelegate respondsToSelector:@selector(instaAPI:didReceivedPhotos:inRegion:)]) {
+            [self.apiDelegate instaAPI:api didReceivedPhotos:result.array inRegion:self.searchRegion];
+        }
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
 
+    [self.fetchOperation start];
+}
 
 @end

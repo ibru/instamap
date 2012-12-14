@@ -21,7 +21,7 @@
 
 #pragma mark -
                                                                                                      
-@interface JUInstagramAPI : NSObject <RKObjectLoaderDelegate>
+@interface JUInstagramAPI : NSObject
 
 @property (nonatomic, strong) id<JUInstagramAPIDelegate> apiDelegate;
 
