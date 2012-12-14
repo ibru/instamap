@@ -33,6 +33,7 @@
 		3660B79415848BEF007DA074 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3660B79315848BEF007DA074 /* CoreLocation.framework */; };
 		3660B79C15849021007DA074 /* PhotoPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3660B79B15849021007DA074 /* PhotoPinView.m */; };
 		3660B79F15849394007DA074 /* JUInstagramAPIPhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3660B79E15849394007DA074 /* JUInstagramAPIPhotoObject.m */; };
+		36610AF9167BDCBE0087F9FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36610AF8167BDCBE0087F9FE /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		3660B79B15849021007DA074 /* PhotoPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPinView.m; sourceTree = "<group>"; };
 		3660B79D15849394007DA074 /* JUInstagramAPIPhotoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUInstagramAPIPhotoObject.h; sourceTree = "<group>"; };
 		3660B79E15849394007DA074 /* JUInstagramAPIPhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUInstagramAPIPhotoObject.m; sourceTree = "<group>"; };
+		36610AF8167BDCBE0087F9FE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Resources/UI/Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				36016003156145B500FE589D /* Instamap */,
+				36610AFB167BDD450087F9FE /* Resources */,
 				36016021156145B500FE589D /* InstamapTests */,
 				36015FFC156145B500FE589D /* Frameworks */,
 				36015FFA156145B500FE589D /* Products */,
@@ -222,6 +225,22 @@
 			name = Screens;
 			sourceTree = "<group>";
 		};
+		36610AFB167BDD450087F9FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36610AFC167BDD4F0087F9FE /* UI */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		36610AFC167BDD4F0087F9FE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				36610AF8167BDCBE0087F9FE /* Default-568h@2x.png */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,6 +314,7 @@
 			files = (
 				36016008156145B500FE589D /* InfoPlist.strings in Resources */,
 				36016011156145B500FE589D /* MainStoryboard.storyboard in Resources */,
+				36610AF9167BDCBE0087F9FE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
